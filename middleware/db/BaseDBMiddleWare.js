@@ -1,3 +1,4 @@
+var pluralize = require('pluralize')
 module.exports = (OpModel, key) => {
   var save = (req, res, next) => {
     var data = req.body
@@ -38,7 +39,7 @@ module.exports = (OpModel, key) => {
         next(err)
       } else {
         if (result) {
-          var keys = key + 's'
+          var keys = pluralize(key) 
           req.custom[keys] = result
           next()
         } else{

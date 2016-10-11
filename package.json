@@ -13,6 +13,7 @@
     "express": "~4.13.4",
     "mongoose": "^4.6.3",
     "morgan": "~1.7.0",
+    "pluralize": "^3.0.0",
     "serve-favicon": "~2.3.0",
     "shortid": "^2.2.6"
   }
