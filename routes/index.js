@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router()
 var api = require('./api')
+var pixi = require('./pixi')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,5 +10,6 @@ router.get('/', function(req, res, next) {
 
 module.exports = {
   index: router,
-  api: api
+  api: api,
+  pixi: pixi
 }

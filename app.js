@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(custom)
 app.use('/', routes.index);
 app.use('/api', routes.api)
+app.use('/pixi', routes.pixi)
 app.use('/users', users);
 
 // catch 404 and forward to error handler

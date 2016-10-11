@@ -12,14 +12,14 @@ module.exports = (kvs, schame) => {
       res.json(req.custom[name])
     })
     router.get('/' + names , middleware.findAll, (req, res, next) => {
-      res.json(req.custom.games)
+      res.json(req.custom[names])
     })
     router.get('/' + name, middleware.findOne, (req, res, next) => {
-      res.json(req.custom.game)
+      res.json(req.custom[name])
     })
     var path = '/' + name + '/:' + key
     router.get(path, middleware.findOne, (req, res, next) => {
-      res.json(req.custom.game)
+      res.json(req.custom[name])
     })
   })
   return router
