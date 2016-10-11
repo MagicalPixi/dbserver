@@ -41,7 +41,18 @@ module.exports = BaseDBMiddleWare(model, '<name>')
 ##### Add Router
 
 _Add new Schame_
+
 add router file at `/router/<name>.js`
 
 _Add Path_
+
 add key value pairs into `/router/<name>.js`
+###### example code
+
+```javascript
+var BaseDBRouter = require('./BaseDBRouter')
+var common = require('../middleware/db/common')
+var game = {key: 'gid', name: 'game'}
+kvs = [game]
+module.exports = BaseDBRouter(kvs, common)
+```
