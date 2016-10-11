@@ -29,7 +29,7 @@ var props = Property({
 module.exports = BaseOpModel('<model name>', props, Connection.mobileconnection)
 ```
 
-###### Add middleware
+###### Add middleware (Deprecated)
 add middleware file at `/middleware/db/<schame>/<name>.js` and add code
 
 ```javascript
@@ -51,8 +51,11 @@ add key value pairs into `/router/<name>.js`
 
 ```javascript
 var BaseDBRouter = require('./BaseDBRouter')
-var common = require('../middleware/db/common')
+var common = require('../lib/db/common')
 var game = {key: 'gid', name: 'game'}
 kvs = [game]
 module.exports = BaseDBRouter(kvs, common)
 ```
+### TODO
+
+- [ ] Add one to many && many to many auto bind
