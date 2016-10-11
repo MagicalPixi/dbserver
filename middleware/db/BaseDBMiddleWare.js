@@ -39,7 +39,7 @@ module.exports = (OpModel, key) => {
         next(err)
       } else {
         if (result) {
-          var keys = pluralize(key) 
+          var keys = pluralize(key)
           req.custom[keys] = result
           next()
         } else{

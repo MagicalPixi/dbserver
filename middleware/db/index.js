@@ -1,5 +1,6 @@
-var game = require('./game')
+var mobile = require('./mobile')
+var magicalpixi = require('./magicalpixi')
 var BaseDBMiddleWare = require('./BaseDBMiddleWare')
 module.exports = {
-  game, BaseDBMiddleWare
+  BaseDBMiddleWare, mobile, magicalpixi
 }
