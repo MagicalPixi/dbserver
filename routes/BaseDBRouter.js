@@ -1,4 +1,5 @@
 var pluralize = require('pluralize')
+var BaseDBMiddleWare = require('../middleware/db//BaseDBMiddleWare')
 
 module.exports = (kvs, schame) => {
   var express = require('express')
@@ -6,17 +7,18 @@ module.exports = (kvs, schame) => {
   kvs.forEach((kv) => {
     var key = kv.key, name = kv.name
     var names = pluralize(name)
-    router.post('/' + name, schame[name].save, (req, res, next) => {
+    var middleware = BaseDBMiddleWare(schame[name], name, key)
+    router.post('/' + name, middleware.save, (req, res, next) => {
       res.json(req.custom[name])
     })
-    router.get('/' + names , schame[name].findAll, (req, res, next) => {
+    router.get('/' + names , middleware.findAll, (req, res, next) => {
       res.json(req.custom.games)
     })
-    router.get('/' + name, schame[name].findOne, (req, res, next) => {
+    router.get('/' + name, middleware.findOne, (req, res, next) => {
       res.json(req.custom.game)
     })
     var path = '/' + name + '/:' + key
-    router.get(path, schame[name].findOne, (req, res, next) => {
+    router.get(path, middleware.findOne, (req, res, next) => {
       res.json(req.custom.game)
     })
   })

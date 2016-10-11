@@ -1,9 +1,9 @@
 var pluralize = require('pluralize')
-module.exports = (OpModel, key) => {
+module.exports = (OpModel, key, idKey) => {
   var save = (req, res, next) => {
     var data = req.body
-    var gid = req.params.gid || req.query.gid || req.body.id
-    data.id = gid
+    var id = req.params[idKey] || req.query[idKey] || req.body.id
+    data.id = id
     OpModel.createOrUpdate(data, (err, result) => {
       if (err) {
         next(err)
@@ -19,8 +19,8 @@ module.exports = (OpModel, key) => {
   }
 
   var findOne = (req, res, next) => {
-    var gid = req.params.gid || req.query.gid
-    OpModel.findOne(gid, (err, result) => {
+    var id = req.params[idKey] || req.query[idKey] || req.body.id
+    OpModel.findOne(id, (err, result) => {
       if (err) {
         next(err)
       } else {
