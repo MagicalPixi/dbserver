@@ -1,6 +1,6 @@
-var mobile = require('./mobile')
-var magicalpixi = require('./magicalpixi')
+var common = require('./common')
+var pixi = require('./pixi')
 var BaseDBMiddleWare = require('./BaseDBMiddleWare')
 module.exports = {
-  BaseDBMiddleWare, mobile, magicalpixi
+  BaseDBMiddleWare, common, pixi
 }

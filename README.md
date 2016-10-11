@@ -37,3 +37,11 @@ var model = require('../../../lib/db')[<name>]
 var BaseDBMiddleWare = require('./BaseDBMiddleWare')
 module.exports = BaseDBMiddleWare(model, '<name>')
 ```
+
+##### Add Router
+
+_Add new Schame_
+add router file at `/router/<name>.js`
+
+_Add Path_
+add key value pairs into `/router/<name>.js`
