@@ -26,6 +26,7 @@ app.use(custom)
 app.use('/', routes.index);
 app.use('/api', routes.api)
 app.use('/pixi', routes.pixi)
+app.use('/redis', routes.redis)
 app.use('/users', users);
 
 // catch 404 and forward to error handler
