@@ -87,6 +87,9 @@ method: 'post'
 params: req.params.key or req.query.key
 body: {value: <value>}
 ```
+
+#### normal
+
 _Get model value with id_
 ```javascript
 /**
