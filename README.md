@@ -2,7 +2,7 @@
 
 _The Magical pixi db server_
 
-For api doc direct to [here](./README.md#Api)
+For api doc direct to [here](./README.md#api)
 
 ### install
 
