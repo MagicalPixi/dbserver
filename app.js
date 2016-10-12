@@ -1,4 +1,4 @@
-var custom = require('./middleware').custom
+var custom = require('./lib/custom')
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
