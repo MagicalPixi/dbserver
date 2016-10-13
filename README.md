@@ -11,56 +11,52 @@ npm install
 ```
 ### start
 
+_for debug:_
 ```bash
 npm start
 ```
+_for test:_
+```bash
+npm run test
+```
+_for production_
+```bash
+npm run production
+```
+
 ### create db model
 
 
 ###### Add data operation model
 
-add model file at `/lib/db/<schame>/<name>.js` and add code
-
+add model file at `/lib/models/schame>/<name>.js` and add code
 ```javascript
-var BaseOpModel = require('../BaseOpModel')
-var Connection = require('../Connection')
-var Property = require('../Property')
-var props = Property({
-  ......
-})
-module.exports = BaseOpModel('<model name>', props, Connection.mobileconnection)
-```
+var name = 'game'
+var props = {
+  name: String,
+  desc: String,
+  icon: String,
+  auth: Boolean,
+  scoreType: Number,
+  js: String
+}
+var relations = [
+  {
+    key: 'users',
+    ref: 'user'
+  }
+]
 
-###### Add middleware (Deprecated)
-add middleware file at `/middleware/db/<schame>/<name>.js` and add code
-
-```javascript
-var model = require('../../../lib/db')[<name>]
-var BaseDBMiddleWare = require('./BaseDBMiddleWare')
-module.exports = BaseDBMiddleWare(model, '<name>')
-```
-
-##### Add Router
-
-_Add new Schame_
-
-add router file at `/router/<name>.js`
-
-_Add Path_
-
-add key value pairs into `/router/<name>.js`
-###### example code
-
-```javascript
-var BaseDBRouter = require('./BaseDBRouter')
-var common = require('../lib/db/common')
-var game = {key: 'gid', name: 'game'}
-kvs = [game]
-module.exports = BaseDBRouter(kvs, common)
+module.exports = {
+  props, relations, name
+}
 ```
 ### TODO
 
 - [x] Add one to many && many to many auto bind
+- [x] Delete redundant code
+- [ ] Add custom key for query
+- [ ] Add optional mapping relate properties
 
 ### Api
 
