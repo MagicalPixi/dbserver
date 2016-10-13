@@ -57,7 +57,7 @@ module.exports = {
 - [x] Delete redundant code
 - [x] Optional copy \_id to id
 - [x] Use custom model key
-- [ ] Add custom key for query
+- [x] Add custom key for query
 - [ ] Add optional mapping relate properties
 
 ### Api
@@ -98,14 +98,27 @@ path: '/<schame>/<model>/:id'
 method: 'get'
 params: req.params.id
 ```
+_Get model value with query_
+```javascript
+/**
+ * @schame current existed [pixi, api]. pixi is for magicalpixi and api is for common
+ * @model the model name for example user, game, sprite
+ * @query must be the model property
+ */
+path: '/<schame>/<model>'
+method: 'get'
+query: key=value
+```
 _Get model all values_
 ```javascript
 /**
  * @schame current existed [pixi, api]. pixi is for magicalpixi and api is for common
  * @models for example users, games, sprites
+ * @query must be the model property
  */
 path: '/<schame>/<models>'
 method: 'get'
+query: key=value
 ```
 _Update or save value_
 ```javascript
