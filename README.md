@@ -126,3 +126,15 @@ path: '/<schame>/<model>'
 method: 'post'
 body: the model object //if the object has id property, the server will make update operation
 ```
+_Update value with query_
+```javascript
+/**
+ * @schame current existed [pixi, api]. pixi is for magicalpixi and api is for common
+ * @model the model name for example user, game, sprite
+ * @query must be the model property
+ */
+path: '/<schame>/<model>'
+method: 'post'
+query: key=value
+body: the model object //if the object has id property, the server will make update operation
+```
