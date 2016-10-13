@@ -55,6 +55,7 @@ module.exports = {
 
 - [x] Add one to many && many to many auto bind
 - [x] Delete redundant code
+- [x] optional copy \_id to id
 - [ ] Add custom key for query
 - [ ] Add optional mapping relate properties
 
