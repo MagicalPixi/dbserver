@@ -10,8 +10,9 @@ var routes = {}
 var redis = require('./redis')
 
 //init db routers
-var dbschames = ['api', 'pixi']
-dbschames.forEach(dbschame => {
+var schames = require('../lib/models').schames
+
+schames.forEach(dbschame => {
   routes[dbschame] = BaseDBRouter(dbschame)
 })
 
