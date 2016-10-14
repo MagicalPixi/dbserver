@@ -12,4 +12,12 @@ router.post('/', multipartMiddleware, upload.qiniu, upload.delete, function(req,
   }
 })
 
+router.post('/content/:name/', upload.savefile, upload.qiniu, upload.delete, (req, res, next) => {
+  if (req.custom.qiniu) {
+    res.json(req.custom.qiniu)
+  } else {
+    next(new Error(req.custom.qiniuerr))
+  }
+})
+
 module.exports = router
