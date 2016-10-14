@@ -138,3 +138,19 @@ method: 'post'
 query: key=value
 body: the model object //if the object has id property, the server will make update operation
 ```
+
+_Upload single file with muti-part request, [example](./upload.js)_
+```javascript
+path: '/upload'
+method: 'post'
+query: name=<name>
+body: muti-part data body with file stream
+```
+
+_Upload file content_
+```javascript
+path: '/upload/content'
+method: 'post'
+query: name=<name>
+body: {content: "<content>"}
+```
