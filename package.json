@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "body-parser": "~1.15.1",
+    "connect-multiparty": "^2.0.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "ejs": "~2.4.1",
@@ -16,6 +17,7 @@
     "mongoose": "^4.6.3",
     "morgan": "~1.7.0",
     "pluralize": "^3.0.0",
+    "qiniu": "^6.1.13",
     "redis": "^2.6.2",
     "serve-favicon": "~2.3.0",
     "shortid": "^2.2.6"

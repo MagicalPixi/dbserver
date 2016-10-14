@@ -18,5 +18,6 @@ schemes.forEach(dbscheme => {
 
 routes.index = router
 routes.redis = redis
+routes.upload = require('./upload')
 
 module.exports = routes
