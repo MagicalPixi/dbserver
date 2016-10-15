@@ -58,6 +58,7 @@ module.exports = {
 - [x] Optional copy \_id to id
 - [x] Use custom model key
 - [x] Add custom key for query
+- [ ] Change `npm qiniu` custom to use promise to upload muti files
 - [ ] Add optional mapping relate properties
 
 ### Api
