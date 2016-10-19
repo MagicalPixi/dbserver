@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+
+/**
+ * 准备工作
+ */
+
+
 /**
  * Module dependencies.
  */
@@ -88,4 +94,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+
+  console.log(port)
 }

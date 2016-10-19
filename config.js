@@ -8,4 +8,4 @@ var qiniu = {
 }
 module.exports = {
   dburl, qiniu
-}
+};
