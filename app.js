@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
-var config = require('./config').create(process.env.NODE_ENV != 'production')
+var config = require('./config')
 var common = require('mp_common').create({key: config.common.encode})
 var custom = require('./lib/custom')
 
