@@ -12,6 +12,7 @@ var routes = require('./routes');
 
 var app = express();
 var auth = require('./lib/auth')
+var cross = require('./lib/cross')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,9 +26,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(custom)
+app.use(cross)
+app.use(auth)
 app.use('/', routes.index);
 app.use('/api', routes.api)
-app.use('/pixi', [auth, routes.pixi])
+app.use('/pixi', routes.pixi)
 app.use('/redis', routes.redis)
 app.use('/upload', routes.upload)
 
