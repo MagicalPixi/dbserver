@@ -8,7 +8,19 @@ For api doc direct to [here](./README.md#api)
 
 ```bash
 npm install
+git submodule init
+git submodule update
 ```
+###### update submodule
+```bash
+git submodule foreach git pull origin master
+```
+or
+```bash
+cd <module dir>
+git pull origin master
+```
+
 ### start
 
 _for debug:_
@@ -19,7 +31,7 @@ _for test:_
 ```bash
 npm run test
 ```
-_for production_
+_for production_ ([forever](https://www.npmjs.com/package/forever))
 ```bash
 npm run production
 ```
