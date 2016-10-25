@@ -4,7 +4,7 @@ var multipart = require('connect-multiparty')
 var multipartMiddleware = multipart()
 var upload = require('../lib/upload')
 
-router.post('/', upload.checkExist, multipartMiddleware, upload.qiniu, upload.delete, upload.savedata, (req, res, next) => {
+router.post('/', multipartMiddleware,upload.checkExist, upload.qiniu, upload.delete, upload.savedata, (req, res, next) => {
   if (req.custom.qiniu) {
     res.json(req.custom.qiniu)
   } else {
