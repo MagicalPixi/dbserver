@@ -15,7 +15,7 @@ git submodule update
 ```bash
 git submodule foreach git pull origin master
 ```
-or
+ or
 ```bash
 cd <module dir>
 git pull origin master
