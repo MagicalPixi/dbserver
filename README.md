@@ -101,6 +101,20 @@ body: {value: <value>}
 
 #### normal
 
+```
+Tips:
+	if not want to display some fields, can use  'dismissFields' as a query key to send a request and the value is string of properties (split by ','), and if only want to display some fields, can use 'dispalyFields' as a query key to send a request and the value is string of properties (split by ',').
+	
+Example:
+	Request	GET	/pixi/users?dismissFields=id,password,_id,__v
+	response [
+      {"username": "aaa",
+      "email":"aaa@magicpixi.com"},
+	  {"username": "bbb",
+      "email":"bbb@magicpixi.com"}
+	]
+```
+
 _Get model value with id_
 ```javascript
 /**
